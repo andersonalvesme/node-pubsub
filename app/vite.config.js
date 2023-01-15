@@ -6,6 +6,10 @@ import vue from '@vitejs/plugin-vue';
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
     return {
+        server: {
+            port: 8000,
+            host: true
+        },
         plugins: [vue()],
         base: command === 'serve' ? '' : '/sakai-vue/',
         resolve: {

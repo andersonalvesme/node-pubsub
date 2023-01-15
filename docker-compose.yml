@@ -1,10 +1,25 @@
 version: '3'
 
 services:
+  app:
+    container_name: app
+    image: node:lts
+    working_dir: /var/www/html/app/
+    entrypoint: ./.docker/entrypoint.sh
+    network_mode: bridge
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/var/www/html/app
+
   api-notifications:
     build: ./api-notifications
     container_name: api-notifications
     entrypoint: ./.docker/entrypoint.sh
+    expose:
+      - 3000
     ports:
       - "3000:3000"
     volumes:
