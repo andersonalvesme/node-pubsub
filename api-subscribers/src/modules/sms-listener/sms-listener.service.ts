@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { RedisContext } from '@nestjs/microservices';
+import insertLog from '../_shared/logger';
 
 @Injectable()
 export class SmsListenerService {
 
-    sendSms(data, context: RedisContext): void {
-        console.log(`${Date()} - Sent ${context.getChannel()} to ${data.name}.`);
+    async sendSms(data, context: RedisContext): Promise<void> {
+        await insertLog(context.getChannel(), data.user, data.notification);
     }
 
 }
