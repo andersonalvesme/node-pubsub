@@ -1,3 +1,5 @@
 /.idea/
 /api-subscribers/.npm-cache/
 /api-notifications/.npm-cache/
+/api-notifications/.env
+/api-subscribers/.env

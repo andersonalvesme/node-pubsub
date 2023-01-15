@@ -2,4 +2,4 @@
 
 cd /home/node/app
 npm install
-npm run start:dev
+npm run start

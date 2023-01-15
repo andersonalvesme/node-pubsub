@@ -3,4 +3,4 @@
 cd /home/node/app
 npm install
 npm run migration:run
-npm run start:dev
+npm run start
